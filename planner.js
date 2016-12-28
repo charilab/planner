@@ -5,7 +5,7 @@
 var baseLayers = {
     "OpenStreetMap": osm,
     "OpenCycleMap": ocm,
-    "Mapbox": mapbox
+    "Mapbox": mapbox_mine
 };
 
 var overlays = {
@@ -13,9 +13,11 @@ var overlays = {
     "雨雲マップ": rainmap,
     "コンビニエンスストア": convenience,
     "トイレ": toilets,
+    "道の駅": services,
     "温泉施設": spa,
     "自転車店": bicycle,
-    "峠": pass
+    "峠": pass,
+    "景勝地": viewpoint
 };
 
 // functions for local storage

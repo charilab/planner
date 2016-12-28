@@ -105,3 +105,28 @@ var pass = L.geoJsonDynamic({
             }
         }
     });
+
+/* services */
+var services = L.geoJsonDynamic({
+        jsonUrl: "http://charilab.sakura.ne.jp/geoapi/getGeoInfo.php?kind=services",
+        reload: true,
+        limit: null,
+        pointToLayer: createMarker,
+        onEachFeature: function (feature, layer) {
+            if (feature.properties.name) {
+                layer.bindPopup(feature.properties.name);
+            }
+        }
+    });
+
+var viewpoint = L.geoJsonDynamic({
+        jsonUrl: "http://charilab.sakura.ne.jp/geoapi/getGeoInfo.php?kind=viewpoint",
+        reload: true,
+        limit: null,
+        pointToLayer: createMarker,
+        onEachFeature: function (feature, layer) {
+            if (feature.properties.name) {
+                layer.bindPopup(feature.properties.name);
+            }
+        }
+    });
