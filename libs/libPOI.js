@@ -82,14 +82,14 @@ var passIcon = L.icon({
 });
 
 var spaIcon = L.icon({
-    iconUrl: IMAGE_PATH+'/hotspring_32.png',
-    iconSize: [32, 32], 
-    iconAnchor: [16, 16]});
+    iconUrl: IMAGE_PATH+'/hotspring_16.png',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
 
 var bicycleIcon = L.icon({
-    iconUrl: IMAGE_PATH+'/bicycle_32.png',
-    iconSize: [32, 32], 
-    iconAnchor: [16, 16]});
+    iconUrl: IMAGE_PATH+'/bicycle_16.png',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
 
 var toiletsIcon = L.icon({
     iconUrl: IMAGE_PATH+'/toilets_16.png',
@@ -98,6 +98,11 @@ var toiletsIcon = L.icon({
 
 var servicesIcon = L.icon({
     iconUrl: IMAGE_PATH+'/michinoeki.svg',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
+
+var viewpointIcon = L.icon({
+    iconUrl: IMAGE_PATH+'/viewpoint_16.png',
     iconSize: [16, 16], 
     iconAnchor: [8, 8]});
 
@@ -130,6 +135,8 @@ function createMarker(feature, latlng) {
         var marker = new L.Marker(latlng, {icon: servicesIcon});
     } else if (feature.properties.amenity == "toilets") {
         var marker = new L.Marker(latlng, {icon: toiletsIcon});
+    } else if (feature.properties.tourism == "viewpoint") {
+        var marker = new L.Marker(latlng, {icon: viewpointIcon});
     } else {
         var marker = new L.CircleMarker(latlng);
     }
