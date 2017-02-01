@@ -17,7 +17,8 @@ var overlays = {
     "温泉施設": spa,
     "自転車店": bicycle,
     "峠": pass,
-    "景勝地": viewpoint
+    "景勝地": viewpoint,
+    "バス停": bus_stop
 };
 
 // functions for local storage

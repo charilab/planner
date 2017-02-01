@@ -130,3 +130,15 @@ var viewpoint = L.geoJsonDynamic({
             }
         }
     });
+
+var bus_stop = L.geoJsonDynamic({
+        jsonUrl: "http://charilab.sakura.ne.jp/geoapi/getGeoInfo.php?kind=bus_stop",
+        reload: true,
+        limit: null,
+        pointToLayer: createMarker,
+        onEachFeature: function (feature, layer) {
+            if (feature.properties.name) {
+                layer.bindPopup(feature.properties.name);
+            }
+        }
+    });

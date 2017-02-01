@@ -106,6 +106,11 @@ var viewpointIcon = L.icon({
     iconSize: [16, 16], 
     iconAnchor: [8, 8]});
 
+var busstopIcon = L.icon({
+    iconUrl: IMAGE_PATH+'/busstop_16.png',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
+
 function selectIcon(feature) {
     var icon = convIcons["others"];
     if (feature.properties.name) {
@@ -137,6 +142,8 @@ function createMarker(feature, latlng) {
         var marker = new L.Marker(latlng, {icon: toiletsIcon});
     } else if (feature.properties.tourism == "viewpoint") {
         var marker = new L.Marker(latlng, {icon: viewpointIcon});
+    } else if (feature.properties.highway == "bus_stop") {
+        var marker = new L.Marker(latlng, {icon: busstopIcon});
     } else {
         var marker = new L.CircleMarker(latlng);
     }
