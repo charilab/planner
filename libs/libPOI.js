@@ -1,101 +1,113 @@
+const IMAGE_PATH="/images";
+
 var convIcons = {
     "セブン-イレブン": L.icon({
-        iconUrl: '/images/conv_711_20.png',
+        iconUrl: IMAGE_PATH+'/conv_711_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "セブンイレブン": L.icon({
-        iconUrl: '/images/conv_711_20.png',
+        iconUrl: IMAGE_PATH+'/conv_711_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "ローソン": L.icon({
-        iconUrl: '/images/conv_lawson_20.png',
+        iconUrl: IMAGE_PATH+'/conv_lawson_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "LAWSON": L.icon({
-        iconUrl: '/images/conv_lawson_20.png',
+        iconUrl: IMAGE_PATH+'/conv_lawson_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "Lawson": L.icon({
-        iconUrl: '/images/conv_lawson_20.png',
+        iconUrl: IMAGE_PATH+'/conv_lawson_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "ファミリーマート": L.icon({
-        iconUrl: '/images/conv_famima_20.png',
+        iconUrl: IMAGE_PATH+'/conv_famima_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "Family": L.icon({
-        iconUrl: '/images/conv_famima_20.png',
+        iconUrl: IMAGE_PATH+'/conv_famima_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "FamilyMart": L.icon({
-        iconUrl: '/images/conv_famima_20.png',
+        iconUrl: IMAGE_PATH+'/conv_famima_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "Familymart": L.icon({
-        iconUrl: '/images/conv_famima_20.png',
+        iconUrl: IMAGE_PATH+'/conv_famima_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "ミニストップ": L.icon({
-        iconUrl: '/images/conv_ministop_20.png',
+        iconUrl: IMAGE_PATH+'/conv_ministop_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "サークルK": L.icon({
-        iconUrl: '/images/conv_circlek_20.png',
+        iconUrl: IMAGE_PATH+'/conv_circlek_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "デイリーヤマザキ": L.icon({
-        iconUrl: '/images/conv_daily_20.png',
+        iconUrl: IMAGE_PATH+'/conv_daily_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "ポプラ": L.icon({
-        iconUrl: '/images/conv_poplar_20.png',
+        iconUrl: IMAGE_PATH+'/conv_poplar_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "スリーエフ": L.icon({
-        iconUrl: '/images/conv_threef_20.png',
+        iconUrl: IMAGE_PATH+'/conv_threef_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "サンクス": L.icon({
-        iconUrl: '/images/conv_sunkus_20.png',
+        iconUrl: IMAGE_PATH+'/conv_sunkus_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "ココストア": L.icon({
-        iconUrl: '/images/conv_coco_20.png',
+        iconUrl: IMAGE_PATH+'/conv_coco_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "セイコーマート": L.icon({
-        iconUrl: '/images/conv_seico_20.png',
+        iconUrl: IMAGE_PATH+'/conv_seico_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
     "others": L.icon({
-        iconUrl: '/images/conv_others_20.png',
+        iconUrl: IMAGE_PATH+'/conv_others_20.png',
         iconSize: [20, 20], 
         iconAnchor: [10, 10]}),
 };
 
 var passIcon = L.icon({
-    iconUrl: '/images/pass_16.png',
+    iconUrl: IMAGE_PATH+'/pass_16.png',
     iconSize:     [16, 16],
     iconAnchor:   [8, 8]
 });
 
 var spaIcon = L.icon({
-    iconUrl: '/images/hotspring_32.png',
-    iconSize: [32, 32], 
-    iconAnchor: [16, 16]});
+    iconUrl: IMAGE_PATH+'/hotspring_16.png',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
 
 var bicycleIcon = L.icon({
-    iconUrl: '/images/bicycle_32.png',
-    iconSize: [32, 32], 
-    iconAnchor: [16, 16]});
+    iconUrl: IMAGE_PATH+'/bicycle_16.png',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
 
 var toiletsIcon = L.icon({
-    iconUrl: '/images/toilets_16.png',
+    iconUrl: IMAGE_PATH+'/toilets_16.png',
     iconSize: [16, 16], 
     iconAnchor: [8, 8]});
 
 var servicesIcon = L.icon({
-    iconUrl: '/images/michinoeki.svg',
+    iconUrl: IMAGE_PATH+'/michinoeki.svg',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
+
+var viewpointIcon = L.icon({
+    iconUrl: IMAGE_PATH+'/viewpoint_16.png',
+    iconSize: [16, 16], 
+    iconAnchor: [8, 8]});
+
+var busstopIcon = L.icon({
+    iconUrl: IMAGE_PATH+'/busstop_16.png',
     iconSize: [16, 16], 
     iconAnchor: [8, 8]});
 
@@ -128,6 +140,10 @@ function createMarker(feature, latlng) {
         var marker = new L.Marker(latlng, {icon: servicesIcon});
     } else if (feature.properties.amenity == "toilets") {
         var marker = new L.Marker(latlng, {icon: toiletsIcon});
+    } else if (feature.properties.tourism == "viewpoint") {
+        var marker = new L.Marker(latlng, {icon: viewpointIcon});
+    } else if (feature.properties.highway == "bus_stop") {
+        var marker = new L.Marker(latlng, {icon: busstopIcon});
     } else {
         var marker = new L.CircleMarker(latlng);
     }
